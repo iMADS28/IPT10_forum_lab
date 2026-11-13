@@ -152,5 +152,9 @@ http://localhost/forum/
 
 ---
 
+## 📄 Repository
+- **GitHub:** https://github.com/iMADS28/IPT10_forum_lab
+
 ## 📄 License
 Educational / Academic Lab Activity.
+
