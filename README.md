@@ -1,28 +1,3 @@
-# Nested Forum Replies — PHP, MySQL & PDO
-
-A clean, secure, and modern nested forum web application built with PHP 8.2+, MySQL/MariaDB, and PDO. Features rooted reply trees, depth-calculated indentation capped at depth 8, robust user authentication, and comprehensive security controls.
-
----
-
-## 📋 Features
-
-- **Rooted Tree Reply Hierarchy:** Comments form a tree data structure where replies reference a parent comment (`parent_id`). Indentation is dynamically calculated based on tree depth and visually capped at level 8 (`min(depth, 8) * 28px`), while accurately displaying true depth labels.
-- **Traversal Safeguards:** Safe pre-order depth-first traversal limited to 1,000 nodes to guard against cycles or excessive loads.
-- **Authentication & Authorization:** 
-  - Guests can read all discussions and reply trees.
-  - User registration and login required before posting replies.
-  - Secure password hashing using `password_hash()` (BCRYPT) and `password_verify()`.
-  - Null password hash protection (dummy seed accounts cannot authenticate).
-  - Session regeneration on login (`session_regenerate_id(true)`) to mitigate session fixation.
-- **Security Defenses:**
-  - **CSRF Protection:** Cryptographically secure session-backed CSRF tokens (`hash_equals()`) on all write operations (register, login, logout, reply).
-  - **SQL Injection Prevention:** 100% prepared PDO statements with parameter binding.
-  - **XSS Mitigation:** All untrusted user content is escaped with `htmlspecialchars(..., ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`.
-  - **Cross-Discussion Parent Validation:** Server verifies parent comments strictly belong to the same discussion before inserting.
-  - **Cookie Hardening:** `HttpOnly`, `SameSite=Lax`, and `use_strict_mode` enabled.
-
----
-
 ## 🏛️ Architecture: MVC Flow
 
 ```
