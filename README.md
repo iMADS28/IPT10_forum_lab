@@ -150,11 +150,5 @@ http://localhost/forum/
 6. **XSS Escaping Test:** Post `<script>alert(1)</script>`; verify it is safely HTML-escaped and rendered literally without script execution.
 7. **CSRF Validation:** Verify tampering with or omitting `csrf_token` yields `403 Forbidden`.
 
----
 
-## 📄 Repository
-- **GitHub:** https://github.com/iMADS28/IPT10_forum_lab
-
-## 📄 License
-Educational / Academic Lab Activity.
 
