@@ -1,0 +1,10 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /forum/
+
+# Pass through static assets
+RewriteRule ^(css|js|images)/(.*)$ public/$1/$2 [L,NC]
+
+# Rewrite all other requests to public/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ public/index.php [QSA,L]

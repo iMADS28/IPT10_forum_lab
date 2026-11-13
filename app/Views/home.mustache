@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested Forum — Discussions</title>
+  <link rel="stylesheet" href="/forum/css/style.css">
+</head>
+<body>
+{{> nav}}
+
+<main class="container">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h1 style="margin: 0; font-size: 1.6rem;">Discussions</h1>
+  </div>
+
+  {{#discussions}}
+    <article class="discussion-item">
+      <h2><a href="/forum/discussions/{{id}}">{{title}}</a></h2>
+      <div class="meta">
+        Started by <strong>{{username}}</strong> on <time>{{created_at}}</time>
+      </div>
+    </article>
+  {{/discussions}}
+  {{^discussions}}
+    <div class="notice-box">No discussions found.</div>
+  {{/discussions}}
+</main>
+
+</body>
+</html>

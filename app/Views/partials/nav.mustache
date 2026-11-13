@@ -1,0 +1,21 @@
+<header class="navbar">
+  <div class="nav-content">
+    <a href="/forum/" class="brand">💬 Nested Forum</a>
+    <nav class="nav-links">
+      <a href="/forum/">Discussions</a>
+      {{#logged_in}}
+        <span class="user-status">
+          👤 <strong>{{username}}</strong>
+        </span>
+        <form method="POST" action="/forum/logout" style="display:inline; margin: 0;">
+          <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+          <button type="submit" class="btn-link">Logout</button>
+        </form>
+      {{/logged_in}}
+      {{^logged_in}}
+        <a href="/forum/login">Login</a>
+        <a href="/forum/register" class="btn" style="padding: 5px 12px; font-size: 0.88rem;">Register</a>
+      {{/logged_in}}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,23 @@
+{
+    "name": "forum/nested-forum",
+    "description": "Nested Forum Replies Lab",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "bramus/router": "^1.6",
+        "mustache/mustache": "^2.14",
+        "monolog/monolog": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Forum\\": "app/"
+        }
+    },
+    "config": {
+        "platform-check": false
+    }
+}
+
